@@ -108,10 +108,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.textViewGoalsByPenaltiesB:
                 teamB.addGoalByPenalti();
-                txtFoulsA.setText(setStringStatisticsB(R.string.fouls, teamB.getFouls()));
+                txtFoulsB.setText(setStringStatisticsB(R.string.fouls, teamB.getFouls()));
                 txtGeneralGoalsB.setText(String.valueOf(teamB.getGoals()));
                 txtGoalsB.setText(setStringStatisticsB(R.string.goals, teamB.getGoals()));
-                txtPenaltiesB.setText(setStringStatisticsA(R.string.goals_by_penalties, teamB.getPenaltiesGoals()));
+                txtPenaltiesB.setText(setStringStatisticsB(R.string.goals_by_penalties, teamB.getPenaltiesGoals()));
                 break;
             case R.id.textViewFoulsB:
                 teamB.addFoul();
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 txtRedCardsB.setText(setStringStatisticsB(R.string.red_cars,teamB.getRedCards()));
                 break;
             case R.id.textViewRedCardsB:
-                teamA.addRedCard();
+                teamB.addRedCard();
                 txtRedCardsB.setText(setStringStatisticsB(R.string.red_cars,teamB.getRedCards()));
                 break;
 
