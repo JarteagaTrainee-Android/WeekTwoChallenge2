@@ -136,20 +136,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public String setStringStatisticsA(@StringRes int idRes, int quantity) {
         String var = getString(idRes);
-        StringBuilder sb = new StringBuilder();
-        sb.append(var);
-        sb.append(" : ");
-        sb.append(quantity);
-        return sb.toString();
+        return var +
+                " : " +
+                quantity;
     }
 
     public String setStringStatisticsB(@StringRes int idRes, int quantity) {
         String var = getString(idRes);
-        StringBuilder sb = new StringBuilder();
-        sb.append(quantity);
-        sb.append(" : ");
-        sb.append(var);
-        return sb.toString();
+        return String.valueOf(quantity) +
+                " : " +
+                var;
     }
 
 
