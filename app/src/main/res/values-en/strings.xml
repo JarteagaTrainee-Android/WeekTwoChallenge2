@@ -8,4 +8,7 @@
     <string name="yellow_cards">YELLOW CARDS</string>
     <string name="double_yellow_cards">DOUBLE YELLOW CARDS</string>
     <string name="red_cars">RED CARDS</string>
+    <string name="Teamb_description">Logo Bayern</string>
+    <string name="lineaString">-</string>
+    <string name="psg_logo">PSG LOGO</string>
 </resources>
