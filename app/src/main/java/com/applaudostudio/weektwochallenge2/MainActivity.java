@@ -1,5 +1,6 @@
 package com.applaudostudio.weektwochallenge2;
 
+import android.os.PersistableBundle;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    public final static String KEY_TEAMA="teamA";
+    public final static String KEY_TEAMB="teamB";
     Team teamA;
     Team teamB;
     TextView txtGeneralGoalsA;
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtYellowCardsB.setOnClickListener(this);
         txtDoubleYellowB.setOnClickListener(this);
         txtRedCardsB.setOnClickListener(this);
+
 
     }
 
@@ -133,7 +137,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
     public String setStringStatisticsA(@StringRes int idRes, int quantity) {
         String var = getString(idRes);
         return var +
@@ -146,6 +149,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return String.valueOf(quantity) +
                 " : " +
                 var;
+    }
+
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putParcelable(KEY_TEAMA,teamA);
+        outState.putParcelable(KEY_TEAMB,teamB);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if(savedInstanceState!=null) {
+            teamA = savedInstanceState.getParcelable(KEY_TEAMA);
+            teamB = savedInstanceState.getParcelable(KEY_TEAMB);
+
+
+            txtGeneralGoalsA.setText(String.valueOf(teamA.getGoals()));
+            txtGoalsA.setText(setStringStatisticsA(R.string.goals, teamA.getGoals()));
+            txtFoulsA.setText(setStringStatisticsA(R.string.fouls, teamA.getFouls()));
+            txtPenaltiesA.setText(setStringStatisticsA(R.string.goals_by_penalties, teamA.getPenaltiesGoals()));
+            txtDoubleYellowA.setText(setStringStatisticsA(R.string.double_yellow_cards, teamA.getRedCardsByYellows()));
+            txtYellowCardsA.setText(setStringStatisticsA(R.string.yellow_cards, teamA.getYellowCards()));
+            txtRedCardsA.setText(setStringStatisticsA(R.string.red_cars,teamA.getRedCards()));
+
+            txtGeneralGoalsB.setText(String.valueOf(teamB.getGoals()));
+            txtFoulsB.setText(setStringStatisticsB(R.string.fouls, teamB.getFouls()));
+            txtGoalsB.setText(setStringStatisticsB(R.string.goals, teamB.getGoals()));
+            txtPenaltiesB.setText(setStringStatisticsB(R.string.goals_by_penalties, teamB.getPenaltiesGoals()));
+            txtDoubleYellowB.setText(setStringStatisticsB(R.string.double_yellow_cards, teamB.getRedCardsByYellows()));
+            txtYellowCardsB.setText(setStringStatisticsB(R.string.yellow_cards, teamB.getYellowCards()));
+            txtRedCardsB.setText(setStringStatisticsB(R.string.red_cars,teamB.getRedCards()));
+
+
+
+
+        }
     }
 
 

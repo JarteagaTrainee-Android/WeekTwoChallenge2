@@ -1,6 +1,9 @@
 package com.applaudostudio.weektwochallenge2;
 
-public class Team {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Team implements Parcelable{
 
     private int mYellowCards;
     private int mRedCards;
@@ -8,6 +11,21 @@ public class Team {
     private int mPenaltiesGoals;
     private int mRedCardsByYellows;
     private int mFouls;
+
+    public static final Creator<Team> CREATOR = new Creator<Team>() {
+        @Override
+        public Team createFromParcel(Parcel in) {
+            return new Team(in);
+        }
+
+        @Override
+        public Team[] newArray(int size) {
+            return new Team[size];
+        }
+    };
+
+
+
     public Team() {
         this.mYellowCards=0;
         this.mRedCards=0;
@@ -15,6 +33,16 @@ public class Team {
         this.mPenaltiesGoals=0;
         this.mRedCardsByYellows=0;
         this.mFouls=0;
+    }
+
+
+    protected Team(Parcel in) {
+        mYellowCards = in.readInt();
+        mRedCards = in.readInt();
+        mGoals = in.readInt();
+        mPenaltiesGoals = in.readInt();
+        mRedCardsByYellows = in.readInt();
+        mFouls = in.readInt();
     }
 
 
@@ -73,5 +101,18 @@ public class Team {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(this.mGoals);
+        parcel.writeInt(this.mPenaltiesGoals);
+        parcel.writeInt(this.mFouls);
+        parcel.writeInt(this.mRedCardsByYellows);
+        parcel.writeInt(this.mRedCards);
+        parcel.writeInt(this.mYellowCards);
+    }
 }
