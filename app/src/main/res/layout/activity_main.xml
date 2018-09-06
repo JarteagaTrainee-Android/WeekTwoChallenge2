@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <android.support.constraint.ConstraintLayout
@@ -39,7 +39,7 @@
 
                 android:text="@string/league_name"
                 android:textColor="@color/textColor"
-                android:textSize="10dp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageViewB"
@@ -49,6 +49,7 @@
 
             <ImageView
                 android:id="@+id/imageViewB"
+                android:contentDescription="@string/Teamb_description"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -59,11 +60,11 @@
                 app:srcCompat="@mipmap/ic_bym" />
 
             <TextView
-                android:id="@+id/textViewScoreA"
+                android:id="@+id/textViewScoreB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/textColor"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageViewB"
@@ -71,15 +72,15 @@
                 app:layout_constraintStart_toEndOf="@+id/imageViewA"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                tools:text="@string/score_default" />
+                android:text="@string/score_default" />
 
             <TextView
-                android:id="@+id/textViewScoreB"
+                android:id="@+id/textViewScoreA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="@string/score_default"
                 android:textColor="@color/textColor"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageViewB"
@@ -87,15 +88,15 @@
                 app:layout_constraintStart_toEndOf="@+id/imageViewA"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                tools:text="@string/score_default" />
+                 />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"
+                android:text="@string/lineaString"
                 android:textColor="@color/textColor"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/textViewScoreA"
@@ -110,19 +111,179 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="91dp">
+            android:minHeight="91dp"
+            android:padding="30dp">
 
-            <View
-                android:id="@+id/divider2"
-                android:layout_width="368dp"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider"
-                app:layout_constraintLeft_toRightOf="parent"
-                app:layout_constraintRight_toLeftOf="parent"
+            <TextView
+                android:id="@+id/textViewGoalsA"
+                android:layout_width="0dp"
+                android:textSize="12sp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/goals"
+                android:textColor="@color/textColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="95dp" />
+                app:layout_constraintVertical_bias="0.19999999" />
 
+            <TextView
+                android:id="@+id/textViewPenaltiesGoalsA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/textColor"
+                android:text="@string/goals_by_penalties"
+                app:layout_constraintEnd_toEndOf="@+id/textViewGoalsA"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewGoalsA"
+                app:layout_constraintTop_toBottomOf="@+id/textViewGoalsA" />
+
+
+            <TextView
+                android:id="@+id/textViewFoulsA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:layout_marginTop="12dp"
+                android:text="@string/fouls"
+                android:textColor="@color/textColor"
+                app:layout_constraintEnd_toEndOf="@+id/textViewPenaltiesGoalsA"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewPenaltiesGoalsA"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPenaltiesGoalsA" />
+
+            <TextView
+                android:id="@+id/textViewYellowCardsA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+
+                android:layout_marginTop="12dp"
+                android:textColor="@color/textColor"
+                android:text="@string/yellow_cards"
+                app:layout_constraintEnd_toEndOf="@+id/textViewFoulsA"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewFoulsA"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFoulsA" />
+
+            <TextView
+                android:id="@+id/textViewDoubleYellowCardsA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+
+                android:layout_marginTop="12dp"
+                android:textColor="@color/textColor"
+                android:text="@string/double_yellow_cards"
+                app:layout_constraintEnd_toEndOf="@+id/textViewYellowCardsA"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewYellowCardsA"
+                app:layout_constraintTop_toBottomOf="@+id/textViewYellowCardsA" />
+
+
+            <TextView
+                android:id="@+id/textViewRedCardsA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/red_cars"
+                android:textSize="10dp"
+                android:textColor="@color/textColor"
+                app:layout_constraintEnd_toEndOf="@+id/textViewDoubleYellowCardsA"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewDoubleYellowCardsA"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDoubleYellowCardsA" />
+
+
+            <TextView
+                android:id="@+id/textViewGoalsB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="10dp"
+                android:text="@string/goals"
+                android:textColor="@color/textColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.2" />
+
+            <TextView
+                android:id="@+id/textViewGoalsByPenaltiesB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="10dp"
+                android:text="@string/goals_by_penalties"
+                android:textColor="@color/textColor"
+                app:layout_constraintEnd_toEndOf="@+id/textViewGoalsB"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewGoalsB"
+                app:layout_constraintTop_toBottomOf="@+id/textViewGoalsB" />
+
+            <TextView
+                android:id="@+id/textViewFoulsB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="10dp"
+                android:text="@string/fouls"
+                android:textColor="@color/textColor"
+                app:layout_constraintEnd_toEndOf="@+id/textViewGoalsByPenaltiesB"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewGoalsByPenaltiesB"
+                app:layout_constraintTop_toBottomOf="@+id/textViewGoalsByPenaltiesB" />
+
+            <TextView
+                android:id="@+id/textViewYellowCardsB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="10dp"
+                android:text="@string/yellow_cards"
+                android:textColor="@color/textColor"
+                app:layout_constraintEnd_toEndOf="@+id/textViewFoulsB"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewFoulsB"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFoulsB" />
+
+            <TextView
+                android:id="@+id/textViewDoubleYellowCardsB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="10dp"
+                android:text="@string/double_yellow_cards"
+                android:textColor="@color/textColor"
+                app:layout_constraintEnd_toEndOf="@+id/textViewYellowCardsB"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewYellowCardsB"
+                app:layout_constraintTop_toBottomOf="@+id/textViewYellowCardsB" />
+
+            <TextView
+                android:id="@+id/textViewRedCardsB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="right"
+                android:textSize="10dp"
+                android:text="@string/red_cars"
+                android:textAlignment="gravity"
+                android:textColor="@color/textColor"
+                app:layout_constraintEnd_toEndOf="@+id/textViewDoubleYellowCardsB"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/textViewDoubleYellowCardsB"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDoubleYellowCardsB" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
         </android.support.constraint.ConstraintLayout>
 
 

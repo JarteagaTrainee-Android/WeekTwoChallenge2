@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">Bayern vs PSG</string>
+    <string name="app_name">BAYERN VS PSG</string>
     <string name="league_name">CHAMPIONS LEAGUE</string>
     <string name="score_default">0</string>
+    <string name="goals">GOLES</string>
+    <string name="goals_by_penalties">GOLES POR PENALTI</string>
+    <string name="fouls">FALTAS</string>
+    <string name="yellow_cards">TARJETAS AMARILLAS</string>
+    <string name="double_yellow_cards">TARJETAS AMARILLAS DOBLES</string>
+    <string name="red_cars">TARJETAS ROJAS</string>
+    <string name="Teamb_description">Logo Bayern</string>
+    <string name="lineaString">-</string>
 </resources>

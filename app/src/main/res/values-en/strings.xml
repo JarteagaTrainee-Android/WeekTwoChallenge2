@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">WeekTwoChallenge2</string>
+    <string name="app_name">BAYERN VS PSG</string>
+    <string name="league_name">CHAMPIONS LEAGUE</string>
+    <string name="score_default">0</string>
+    <string name="goals">GOALS</string>
+    <string name="goals_by_penalties">GOLS BY PENALTY</string>
+    <string name="fouls">FOULS</string>
+    <string name="yellow_cards">YELLOW CARDS</string>
+    <string name="double_yellow_cards">DOUBLE YELLOW CARDS</string>
+    <string name="red_cars">RED CARDS</string>
 </resources>

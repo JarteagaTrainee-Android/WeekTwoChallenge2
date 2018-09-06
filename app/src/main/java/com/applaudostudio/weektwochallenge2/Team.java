@@ -1,59 +1,71 @@
 package com.applaudostudio.weektwochallenge2;
 
 public class Team {
-    private int mYelowCards;
+
+    private int mYellowCards;
     private int mRedCards;
-    private int mGolas;
+    private int mGoals;
     private int mPenaltiesGoals;
     private int mRedCardsByYellows;
     private int mFouls;
-
-
-    public int getmYelowCards() {
-        return mYelowCards;
+    public Team() {
+        this.mYellowCards=0;
+        this.mRedCards=0;
+        this.mGoals=0;
+        this.mPenaltiesGoals=0;
+        this.mRedCardsByYellows=0;
+        this.mFouls=0;
     }
 
-    public int getmRedCards() {
+
+    public int getYellowCards() {
+        return mYellowCards;
+    }
+
+    public int getRedCards() {
         return mRedCards;
     }
 
-    public int getmGolas() {
-        return mGolas;
+    public int getGoals() {
+        return mGoals;
     }
 
-    public int getmPenaltiesGoals() {
+    public int getPenaltiesGoals() {
         return mPenaltiesGoals;
     }
 
-    public int getmRedCardsByYellows() {
+    public int getRedCardsByYellows() {
         return mRedCardsByYellows;
     }
 
-    public int getmFouls() {
+    public int getFouls() {
         return mFouls;
     }
 
 
     public void addGoal() {
-        this.mGolas++;
+        this.mGoals++;
     }
 
     public void addGoalByPenalti() {
         this.mPenaltiesGoals++;
-        this.mGolas++;
+        this.mGoals++;
+        this.addFoul();
 
     }
 
     public void addYellowCard(){
-        this.mYelowCards++;
-        if(this.mYelowCards%2==0){
-            mRedCards++;
+        this.mYellowCards++;
+        this.addFoul();
+        if(this.mYellowCards %2==0){
+            this.addRedCard();
             mRedCardsByYellows++;
         }
     }
 
     public void addRedCard(){
         this.mRedCards++;
+        this.addFoul();
     }
 
     public void addFoul(){
