@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Bayern vs PSG</string>
+    <string name="league_name">CHAMPIONS LEAGUE</string>
+    <string name="score_default">0</string>
+</resources>
