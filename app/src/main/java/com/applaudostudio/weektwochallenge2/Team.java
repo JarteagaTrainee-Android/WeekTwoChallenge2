@@ -26,7 +26,7 @@ public class Team implements Parcelable{
 
 
 
-    public Team() {
+    Team() {
         this.mYellowCards=0;
         this.mRedCards=0;
         this.mGoals=0;
@@ -36,7 +36,7 @@ public class Team implements Parcelable{
     }
 
 
-    protected Team(Parcel in) {
+    private Team(Parcel in) {
         mYellowCards = in.readInt();
         mRedCards = in.readInt();
         mGoals = in.readInt();

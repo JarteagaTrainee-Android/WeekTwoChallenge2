@@ -1,6 +1,5 @@
 package com.applaudostudio.weektwochallenge2;
 
-import android.os.PersistableBundle;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,8 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    public final static String KEY_TEAMA="teamA";
-    public final static String KEY_TEAMB="teamB";
+    public final static String KEY_TEAM_A ="teamA";
+    public final static String KEY_TEAM_B ="teamB";
     Team teamA;
     Team teamB;
     TextView txtGeneralGoalsA;
@@ -155,8 +154,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putParcelable(KEY_TEAMA,teamA);
-        outState.putParcelable(KEY_TEAMB,teamB);
+        outState.putParcelable(KEY_TEAM_A,teamA);
+        outState.putParcelable(KEY_TEAM_B,teamB);
         super.onSaveInstanceState(outState);
     }
 
@@ -164,8 +163,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         if(savedInstanceState!=null) {
-            teamA = savedInstanceState.getParcelable(KEY_TEAMA);
-            teamB = savedInstanceState.getParcelable(KEY_TEAMB);
+            teamA = savedInstanceState.getParcelable(KEY_TEAM_A);
+            teamB = savedInstanceState.getParcelable(KEY_TEAM_B);
 
 
             txtGeneralGoalsA.setText(String.valueOf(teamA.getGoals()));
