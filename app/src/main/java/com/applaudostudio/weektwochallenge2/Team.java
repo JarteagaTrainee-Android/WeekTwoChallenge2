@@ -3,6 +3,9 @@ package com.applaudostudio.weektwochallenge2;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/***
+ * This class is for both teams, implementing Parcealbe to set a bundle on the main.
+ */
 public class Team implements Parcelable{
 
     private int mYellowCards;
